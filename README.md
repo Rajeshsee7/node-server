@@ -25,33 +25,41 @@ Before starting, install **Node.js** in Termux.
 ```bash
 pkg update && pkg upgrade -y
 pkg install nodejs-lts
-Step 1 — Download Server Files
+```
+# Step 1 — Download Server Files
 Choose one of the following download methods.
-Method 1 — Clone the Repository (Recommended)
+## Method 1 — Clone the Repository (Recommended)
 Install Git:
-Bash
+```Bash
 pkg install git
+```
 Clone the repository:
-Bash
+```bash
 git clone https://github.com/Rajeshsee7/node-server.git
+```
 Open the project folder:
-Bash
+```Bash
 cd node-server
-Method 2 — Download Only server.js Using wget
+```
+## Method 2 — Download Only server.js Using wget
 Install wget:
-Bash
+```Bash
 pkg install wget
+```
 Download the server file:
-Bash
+```Bash
 wget https://raw.githubusercontent.com/Rajeshsee7/node-server/63f253f7cc02be51c78d73ce5fa4a54b4381e007/server.js
-Step 2 — Install Dependencies
+```
+# Step 2 — Install Dependencies
 Install the required WebSocket library:
-Bash
+```Bash
 npm install ws
-Step 3 — Start the Server
+```
+# Step 3 — Start the Server
 Run the server using Node.js:
-Bash
+```Bash
 node server.js
+```
 Example Server Output
 After starting the server you should see something similar to this:
 
@@ -64,16 +72,19 @@ ws://192.168.0.104:8080/
 =================================
 Which WebSocket URL Should Be Used
 If the client runs on the same Android device (for example Android WebView):
-
+`
 ws://localhost:8080/
+`
 If another device on the same WiFi network wants to connect:
-
+`
 ws://192.168.x.x:8080/
+`
 Use the LAN IP address shown in the server output.
 Android WebView Integration
 Enable JavaScript inside the WebView:
 Java
-webview.getSettings().setJavaScriptEnabled(true);
+`
+webview.getSettings().setJavaScriptEnabled(true);`
 The Android interface should handle:
 Sending WebSocket connection URL to WebView
 Receiving connection status (connected / disconnected)
@@ -88,9 +99,10 @@ Avoid exposing the server to the public internet
 Add authentication for remote access
 License
 MIT License
-Tip
+# Tip
 For long-running usage run the server inside tmux:
-Bash
+```Bash
 pkg install tmux
 tmux
 node server.js
+```
