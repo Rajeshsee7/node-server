@@ -25,7 +25,7 @@ Prerequisites
 
 «Note: Node.js must be installed before running the server. Use the following command in Termux:»
 
-pkg update && pkg upgrade -y
+pkg update && pkg upgrade -y 
 pkg install nodejs-lts
 
 ---
