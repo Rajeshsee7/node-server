@@ -28,7 +28,7 @@ pkg install nodejs-lts
 ```
 # Step 1 — Download Server Files
 Choose one of the following download methods.
-## Method 1 — Clone the Repository (Recommended)
+#### Method 1 — Clone the Repository (Recommended)
 Install Git:
 ```Bash
 pkg install git
@@ -41,7 +41,7 @@ Open the project folder:
 ```Bash
 cd node-server
 ```
-## Method 2 — Download Only server.js Using wget
+#### Method 2 — Download Only server.js Using wget
 Install wget:
 ```Bash
 pkg install wget
