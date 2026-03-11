@@ -1,7 +1,7 @@
 Node-Server-Termux-Terminal
 
-A WebSocket-based terminal server for Termux that allows remote Bash shell access using WebSocket clients such as Android WebView.
-The server runs a persistent Bash shell and streams command output in real time.
+A WebSocket-based terminal server for Termux that allows remote Bash shell access through WebSocket clients such as Android WebView.
+The server runs a persistent Bash shell and streams terminal output in real time.
 
 ---
 
@@ -17,7 +17,7 @@ Features
 
 Prerequisites
 
-Before starting, make sure Node.js is installed in Termux.
+Before starting, install Node.js in Termux.
 
 Install Node.js
 
@@ -26,35 +26,35 @@ pkg install nodejs-lts
 
 ---
 
-Step 1 — Download the Server Files
+Step 1 — Download Server Files
 
 Choose one of the following download methods.
 
 ---
 
-Method 1.1 — Clone the Full GitHub Repository (Recommended)
+Method 1 — Clone the Full Repository (Recommended)
 
-Install Git
+Install Git:
 
 pkg install git
 
-Clone Repository
+Clone the GitHub repository:
 
 git clone https://github.com/Rajeshsee7/node-server.git
 
-Open the Project Folder
+Open the project folder:
 
 cd node-server
 
 ---
 
-Method 1.2 — Download Only "server.js" Using wget
+Method 2 — Download Only "server.js" Using wget
 
-Install wget
+Install wget:
 
 pkg install wget
 
-Download server.js
+Download the server file:
 
 wget https://raw.githubusercontent.com/Rajeshsee7/node-server/63f253f7cc02be51c78d73ce5fa4a54b4381e007/server.js
 
@@ -62,9 +62,7 @@ wget https://raw.githubusercontent.com/Rajeshsee7/node-server/63f253f7cc02be51c7
 
 Step 2 — Install Dependencies
 
-The server requires the ws WebSocket library.
-
-Run the following command:
+Install the required WebSocket library:
 
 npm install ws
 
@@ -78,9 +76,9 @@ node server.js
 
 ---
 
-Server Output
+Example Server Output
 
-After starting the server you will see output similar to this:
+After starting the server you should see output similar to this:
 
 =================================
  WebSocket Terminal Server
@@ -102,23 +100,23 @@ If another device on the same WiFi network wants to connect:
 
 ws://192.168.x.x:8080/
 
-Use the LAN IP address displayed in the server output.
+Use the LAN IP address shown in the server output.
 
 ---
 
 Android WebView Integration
 
-Enable JavaScript
+Enable JavaScript inside the WebView:
 
 webview.getSettings().setJavaScriptEnabled(true);
 
 AndroidBridge Responsibilities
 
-The Android interface should handle:
+The Android interface layer should handle:
 
-- Sending WebSocket connection URL to WebView
+- Sending the WebSocket connection URL to WebView
 - Receiving connection status ("connected" / "disconnected")
-- Sending commands from Android
+- Sending terminal commands from Android
 - Displaying terminal output inside a "TextView"
 
 ---
@@ -127,13 +125,13 @@ Security Notice
 
 This server executes real Bash commands.
 
-Anyone who connects can run system commands.
+Anyone connected to the WebSocket can run system commands.
 
-Recommended practices:
+Recommended usage:
 
-- Use only on trusted networks
-- Do not expose directly to the public internet
-- Add authentication if using remotely
+- Run only on trusted networks
+- Avoid exposing the server directly to the public internet
+- Add authentication for remote access
 
 ---
 
@@ -143,9 +141,9 @@ MIT License
 
 ---
 
-Operational Tip
+Tip
 
-For long running sessions use tmux so the server keeps running even if Termux closes.
+For long-running usage, run the server inside tmux so it continues running even if Termux is closed.
 
 pkg install tmux
 tmux
