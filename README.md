@@ -24,6 +24,8 @@ Before starting, install **Node.js** in Termux.
 
 ```bash
 pkg update && pkg upgrade -y
+```
+```bash
 pkg install nodejs-lts
 ```
 # Step 1 — Download Server Files
@@ -103,6 +105,10 @@ MIT License
 For long-running usage run the server inside tmux:
 ```Bash
 pkg install tmux
+```
+```bash
 tmux
+```
+```bash
 node server.js
 ```
